@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        include partials/header 
+    body.login
+        .contenedor-formulario
+            h1 Crea tu cuenta en Uptask
+
+                p.error.alerta.oculto#error-create
+
+            form#formulario-caja.caja.caja-login
+                .campo
+                    label(for="email") E-mail:
+                    input(type="email" id="email" name="email" placeholder="Ingresa tu email..." required)
+                .campo
+                    label(for="password") Password:
+                    input(type="password" id="password" name="password" placeholder="Ingresa tu contraseña..." required) 
+                .campo.enviar
+                    input.boton(type="submit" value="Crear Cuenta")
+                .campo
+                    a(href="/iniciar-sesion") Volver a Iniciar Sesion

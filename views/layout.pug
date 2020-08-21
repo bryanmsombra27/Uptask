@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        include partials/header
+        script(src="https://kit.fontawesome.com/1db2aa9bc1.js")
+    body
+        header.barra
+            h1 UpTask - Administrador
+            a(href="/cerrar-sesion") Cerrar Sesion
+
+        main.contenedor
+            aside.contenedor-proyectos
+                .panel.crear-proyecto
+                    a(href="/nuevo-proyecto" class="boton") Nuevo Projecto
+                        span +  
+                .panel.lista-proyectos
+                    h2 Proyectos
+                    ul#proyectos.proyectos
+                        if(proyectos.length >0)
+                            each proyecto in proyectos
+                                li
+                                    a(href=`/proyectos/${proyecto.url}`)=proyecto.nombre
+            block contenido
+
+            //- pre=vardump(proyectos)

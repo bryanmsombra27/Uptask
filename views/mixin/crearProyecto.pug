@@ -1,0 +1,17 @@
+mixin crearProyecto(proyecto={})
+    -if(proyecto.id)
+        form.agregar#editar
+            .campo
+                label(for="nombre") Nombre del Proyecto:
+                input(value=proyecto.nombre type="text" id="nombre" name="nombre" placeholder="Nombre Proyecto")
+
+            .campo.enviar
+                input(type="submit" value=`${proyecto.nombre ? "Guardar": "Agregar"}` class="boton")
+    -else
+        form.agregar#agregar
+            .campo
+                label(for="nombre") Nombre del Proyecto:
+                input(value=proyecto.nombre type="text" id="nombre" name="nombre" placeholder="Nombre Proyecto")
+
+            .campo.enviar
+                input(type="submit" value=`${proyecto.nombre ? "Guardar": "Agregar"}` class="boton")

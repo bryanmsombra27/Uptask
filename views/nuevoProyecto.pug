@@ -1,0 +1,12 @@
+extends layout
+
+include mixin/crearProyecto
+
+block contenido
+    .contenido-principal
+        h1=title
+
+        #alerta.alerta.oculto
+
+        +crearProyecto(proyecto)
+
