@@ -31,7 +31,7 @@ const cambiarEstadoTarea = async (e) => {
             cancelButtonText: "Cancelar",
         }).then((result) => {
             if (result.value) {
-                fetchData(`${location.origin}/tareas/${id}`, "delete").then(data => {
+                fetchData(`/tareas/${id}`, "delete").then(data => {
                     if (data.status === "success") {
                         tareaHTML.parentElement.removeChild(tareaHTML);
                         actualizarAvance();

@@ -56,7 +56,7 @@ const eliminarData = (e) => {
         cancelButtonText: "Cancelar",
     }).then((result) => {
         if (result.value) {
-            fetchData(`${location.origin}/proyectos/${urlProyecto}`, "delete");
+            fetchData(`/proyectos/${urlProyecto}`, "delete");
 
             Swal.fire("Borrado!", "Tu proyecto ha sido borrado.", "success");
         }
