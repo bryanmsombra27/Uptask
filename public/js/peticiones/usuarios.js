@@ -32,13 +32,11 @@ const iniciarSesion = async (e) => {
     const objeto = campos(e);
     const data = await fetchData("/iniciar-sesion", "POST", objeto);
 
-    console.log(data);
 }
 const restablecerEmail = async (e) => {
     e.preventDefault();
     const objeto = campos(e);
     const data = await fetchData("/reestablecer", "post", objeto);
-    console.log(data);
 
     if (data.status === "success") {
         location.href = data.url
@@ -54,7 +52,6 @@ const restablecerContraseña = async (e) => {
 
     const data = await fetchData(`/reestablecer/${token}`, "post", objeto);
 
-    console.log(data);
     if (data.status === "success") {
         Swal.fire({
             title: "Passoword Cambiada con exito",
