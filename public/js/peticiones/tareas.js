@@ -9,7 +9,7 @@ const cambiarEstadoTarea = async (e) => {
     if (e.target.classList.contains("fa-check-circle")) {
         const id = e.target.parentElement.parentElement.dataset.tarea;
 
-        const data = await fetchData(`http://localhost:3000/tareas/${id}`, "PATCH");
+        const data = await fetchData(`/tareas/${id}`, "PATCH");
 
         if (data.status === "Success") {
             e.target.classList.toggle("completo");

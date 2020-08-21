@@ -7,7 +7,7 @@ const registrarUsuario = async (e) => {
     e.preventDefault();
     const objeto = campos(e);
     const data = await fetchData(
-        "http://localhost:3000/crear-cuenta",
+        "/crear-cuenta",
         "post",
         objeto
     );
@@ -30,14 +30,14 @@ const registrarUsuario = async (e) => {
 const iniciarSesion = async (e) => {
     e.preventDefault();
     const objeto = campos(e);
-    const data = await fetchData("http://localhost:3000/iniciar-sesion", "POST", objeto);
+    const data = await fetchData("/iniciar-sesion", "POST", objeto);
 
     console.log(data);
 }
 const restablecerEmail = async (e) => {
     e.preventDefault();
     const objeto = campos(e);
-    const data = await fetchData("http://localhost:3000/reestablecer", "post", objeto);
+    const data = await fetchData("/reestablecer", "post", objeto);
     console.log(data);
 
     if (data.status === "success") {
@@ -52,7 +52,7 @@ const restablecerContraseña = async (e) => {
     const objeto = campos(e);
     const token = location.href.split("/")[4];
 
-    const data = await fetchData(`http://localhost:3000/reestablecer/${token}`, "post", objeto);
+    const data = await fetchData(`/reestablecer/${token}`, "post", objeto);
 
     console.log(data);
     if (data.status === "success") {

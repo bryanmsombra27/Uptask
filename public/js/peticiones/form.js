@@ -17,7 +17,7 @@ const enviarDatos = async (e) => {
     }
 
     const data = await fetchData(
-        "http://localhost:3000/nuevo-proyecto",
+        "/nuevo-proyecto",
         "POST",
         objeto
     );
@@ -33,7 +33,7 @@ const updateDatos = async (e) => {
     const id = location.href.split("/")[5];
     const objeto = campos(e);
     const data = await fetchData(
-        `http://localhost:3000/nuevo-proyecto/${id}`,
+        `/nuevo-proyecto/${id}`,
         "POST",
         objeto
     );
@@ -145,7 +145,7 @@ const agregarTareas = async (e) => {
     const objeto = campos(e);
     console.log(objeto);
 
-    const data = await fetchData(`http://localhost:3000/proyectos/${url}`, "post", objeto);
+    const data = await fetchData(`/proyectos/${url}`, "post", objeto);
 
     console.log(data);
 
